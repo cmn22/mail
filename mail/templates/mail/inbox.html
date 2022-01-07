@@ -1,0 +1,38 @@
+{% extends "mail/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+    <div id="emails-view">
+    </div>
+
+    <div id="mail">
+        <h3 class="sub-heading">Mail Details</h3>
+        <p class="mail-details" id="from"></p>
+        <p class="mail-details" id="to"></p>
+        <p class="mail-details" id="subject"></p>
+        <p class="mail-details" id="time"></p>
+        <textarea class="display-textfield" id="body" disabled></textarea>
+        <button class="btn btn-sm btn-outline-primary navbar-button response-button" id="archive">Archive</button>
+        <button class="btn btn-sm btn-outline-primary navbar-button response-button" id="unarchive">UnArchive</button>
+        <button class="btn btn-sm btn-outline-primary navbar-button response-button" id="reply">Reply</button>
+    </div>
+
+    <div id="compose-view">
+        <h3 class="sub-heading">New Email</h3>
+        <form id="compose-form">
+            <div class="form-group mail-label">
+                FROM: <input disabled class="form-control" value="{{ request.user.email }}">
+            </div>
+            <div class="form-group mail-label">
+                TO: <input class="form-control input-field" id="compose-recipients" placeholder="Recipients">
+            </div>
+            <div class="form-group">
+                <input class="form-control input-field" id="compose-subject" placeholder="Subject">
+            </div>
+            <textarea class="form-control input-field" id="compose-body" placeholder="Body"></textarea>
+            <input id="send" type="submit" value="SEND" class="btn btn-sm btn-outline-primary navbar-button response-button"/>
+        </form>
+    </div>
+
+{% endblock %}

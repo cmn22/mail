@@ -1,0 +1,26 @@
+{% extends "mail/layout.html" %}
+
+{% block body %}
+
+    <h2 class="sub-heading">Register</h2>
+
+    {% if message %}
+        <div>{{ message }}</div>
+    {% endif %}
+
+    <form action="{% url 'register' %}" method="post">
+        {% csrf_token %}
+        <div class="form-group translucent">
+            <input class="form-control input-field" type="email" name="email" placeholder="Email Address" required>
+        </div>
+        <div class="form-group translucent">
+            <input class="form-control input-field" type="password" name="password" placeholder="Password" required>
+        </div>
+        <div class="form-group translucent">
+            <input class="form-control input-field" type="password" name="confirmation" placeholder="Confirm Password" required>
+        </div>
+        <input class="btn btn-sm btn-outline-primary navbar-button response-button" type="submit" value="Register">
+        <p class="message">Already have an account? <a href="{% url 'login' %}">Log In here.</a></p>
+    </form>
+
+{% endblock %}
