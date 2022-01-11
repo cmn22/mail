@@ -54,11 +54,11 @@ git clone https://github.com/cmn22/mail
 #### For Unix/macOS
 1. Installing virtualenv
     ```
-    pip install virtualenv
+    pip3 install virtualenv
     ```
 2. Creating a virtual environment
     ```
-    python venv env
+    virtualenv env
     ```
 3. Activating the virtual environment
     ```
@@ -69,11 +69,11 @@ git clone https://github.com/cmn22/mail
 #### For Windows
 1. Installing virtualenv
     ```
-    pip install virtualenv
+    pip3 install virtualenv
     ```
 2. Creating a virtual environment
     ```
-    python venv env
+    virtualenv env
     ```
 3. Activating the virtual environment
     ```
@@ -86,7 +86,7 @@ git clone https://github.com/cmn22/mail
 ### Installing required dependencies
 Install the required packages as stated in requirements.txt file
 ```
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 <br/>
@@ -95,15 +95,15 @@ pip install -r requirements.txt
 ### Running the application
 1. Make Migrations 
     ```
-    python manage.py makemigrations
+    python3 manage.py makemigrations
     ```
 2. Migrate
     ```
-    python manage.py migrate
+    python3 manage.py migrate
     ```
 3. Runserver (on port 8000)
     ```
-    python manage.py runserver 0.0.0.0:8000
+    python3 manage.py runserver 0.0.0.0:8000
     ```
 4. Open the corresponding address on a web browser and your application should be up and running.
 
